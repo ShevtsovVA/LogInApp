@@ -22,6 +22,8 @@ class HelloScreenViewController: UIViewController {
 //            UIColor.systemCyan.cgColor,
 //            UIColor.systemYellow.cgColor
 //        ]
+//        backGrounGradient.startPoint = CGPoint(x:0,y:0)
+//        backGrounGradient.endPoint = CGPoint(x:1,y:1)
 //        view.layer.addSublayer(backGrounGradient)
         
         helloWordLabel.text = "Hello, \(helloLabel ?? "User")"
