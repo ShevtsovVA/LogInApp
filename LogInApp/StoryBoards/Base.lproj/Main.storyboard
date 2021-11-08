@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw4-Ga-fJi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw4-Ga-fJi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,7 +80,7 @@
                     <connections>
                         <outlet property="passwordTF" destination="muv-8n-Zyq" id="jwD-84-8oZ"/>
                         <outlet property="userNameTF" destination="1HA-nG-EI6" id="npM-jc-k8C"/>
-                        <segue destination="YER-Pa-Zdg" kind="show" identifier="settingsSegue" id="bTW-9B-uiT"/>
+                        <segue destination="YER-Pa-Zdg" kind="showDetail" identifier="settingsSegue" id="bTW-9B-uiT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -91,12 +91,12 @@
         <scene sceneID="NW7-vL-HC6">
             <objects>
                 <viewController id="YER-Pa-Zdg" customClass="HelloScreenViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n2W-Va-yk1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="n2W-Va-yk1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-BV-CHR">
-                                <rect key="frame" x="169" y="238" width="76" height="39"/>
+                                <rect key="frame" x="169" y="150" width="76" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -122,7 +122,6 @@
         <!--Navigation Controller-->
         <scene sceneID="XjK-kr-OMs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-At-p2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bw4-Ga-fJi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2GS-gO-KeY">
@@ -134,6 +133,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EKG-hw-Wpf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-At-p2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.333333333333336" y="97.098214285714278"/>
         </scene>
