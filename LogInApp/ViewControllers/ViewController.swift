@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         if userNameTF.text != userName || passwordTF.text != password {
             alert (title: "So sorry", message: "Wrong login or password")
         } else {
-            performSegue(withIdentifier: "settingsSegue", sender: nil)
+            performSegue(withIdentifier: "tabBarController", sender: nil)
         }
     }
     
