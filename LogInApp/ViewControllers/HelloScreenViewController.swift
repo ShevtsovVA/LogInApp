@@ -11,7 +11,8 @@ class HelloScreenViewController: UIViewController {
   
     @IBOutlet weak var helloWordLabel: UILabel!
     
-    var helloLabel: String!
+    
+    var user: User!
     
     let firstColor = UIColor (red: 210/255, green: 109/255, blue: 128/255, alpha: 1)
     let secondColor = UIColor (red: 107/255, green: 148/255, blue: 230/255, alpha: 1)
@@ -31,7 +32,7 @@ class HelloScreenViewController: UIViewController {
         
 //        (topColor: firstColor, bottomColor: secondColor)
         
-        helloWordLabel.text = "Hello, \(helloLabel)"
+        helloWordLabel.text = "Hello, \(user.person)"
        
     
     }

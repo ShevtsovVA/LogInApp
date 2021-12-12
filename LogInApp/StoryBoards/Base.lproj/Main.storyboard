@@ -109,14 +109,19 @@
         <!--Item-->
         <scene sceneID="NW7-vL-HC6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lqo-hf-Agg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="YER-Pa-Zdg" customClass="HelloScreenViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="n2W-Va-yk1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-BV-CHR">
-                                <rect key="frame" x="122" y="150" width="76" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAO-hC-iVT">
+                                <rect key="frame" x="123.5" y="458" width="73" height="31"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-BV-CHR">
+                                <rect key="frame" x="95.5" y="150" width="129" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,8 +131,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" red="1" green="0.61349615998870788" blue="0.97839001608321474" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="IAO-hC-iVT" firstAttribute="centerX" secondItem="Oz9-BB-4Yc" secondAttribute="centerX" id="8QU-RQ-Oil"/>
                             <constraint firstItem="oAf-BV-CHR" firstAttribute="centerX" secondItem="Oz9-BB-4Yc" secondAttribute="centerX" id="DEZ-sI-6hv"/>
                             <constraint firstItem="oAf-BV-CHR" firstAttribute="top" secondItem="Oz9-BB-4Yc" secondAttribute="top" constant="150" id="O5L-yh-BGf"/>
+                            <constraint firstItem="Oz9-BB-4Yc" firstAttribute="bottom" secondItem="IAO-hC-iVT" secondAttribute="bottom" constant="30" id="e8e-fx-fO4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NT3-MY-gu5"/>
@@ -136,6 +143,7 @@
                         <outlet property="helloWordLabel" destination="oAf-BV-CHR" id="fyt-sC-fZv"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqo-hf-Agg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2616" y="-243"/>
         </scene>
@@ -150,13 +158,37 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A2M-5e-Gea">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Lt7-m4-w6m" kind="presentation" modalPresentationStyle="fullScreen" id="uuN-hv-gaD"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0J-ma-SFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2615.9420289855075" y="450.66964285714283"/>
         </scene>
+        <!--User Info View Controller-->
+        <scene sceneID="k5a-mK-K2a">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSf-9p-Gkt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Lt7-m4-w6m" customClass="UserInfoViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hux-AM-Uub">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wsI-K0-tfe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3384" y="450"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

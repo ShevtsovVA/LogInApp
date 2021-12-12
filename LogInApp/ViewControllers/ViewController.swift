@@ -12,11 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
-    private let userName = "Murka"
-    private let password = "123"
+    private let user = User.getUserData()
 
     @IBAction func logInButton(_ sender: UIButton) {
-        if userNameTF.text != userName || passwordTF.text != password {
+        if userNameTF.text != user.login || passwordTF.text != user.password {
             alert (title: "So sorry", message: "Wrong login or password")
         } else {
             performSegue(withIdentifier: "tabBarController", sender: nil)
@@ -24,14 +23,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func forgotUserNameButton(_ sender: UIButton) {
-       alert(title: "Forgot your name?", message: "Your name is \(userName)")
+        alert(title: "Forgot your login?", message: "Your login is \(user.login)")
     }
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
-      alert(title: "Forgot your password?", message: "Your password is \(password)")
+        alert(title: "Forgot your password?", message: "Your password is \(user.password)")
     }
     
-    func alert (title:String,message: String) {
+    func alert (title:String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
@@ -40,11 +39,20 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let helloScreenVC = segue.destination as? HelloScreenViewController else {return}
-        helloScreenVC.helloLabel = userName
-        //userNameTF.text
+        guard let tabBarController = segue.destination as? UITabBarController else {return}
+        guard let viewControllers = tabBarController.viewControllers else {return}
+        
+        viewControllers.forEach {
+            if let helloVC = $0 as? HelloScreenViewController {
+                helloVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController{
+                let userVC = navigationVC.topViewController as! UserInfoViewController
+                userVC.user = user
+            }
+        }
+     
     }
     
-    
+
 }
 
