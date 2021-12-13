@@ -20,19 +20,19 @@ class HelloScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backGrounGradient = CAGradientLayer ()
-        backGrounGradient.frame = self.view.bounds
-        backGrounGradient.colors = [
-            UIColor.systemCyan.cgColor,
-            UIColor.systemYellow.cgColor
-        ]
-        backGrounGradient.startPoint = CGPoint(x:0,y:0)
-        backGrounGradient.endPoint = CGPoint(x:1,y:1)
-        self.view.layer.addSublayer(backGrounGradient)
+//        let backGrounGradient = CAGradientLayer ()
+//        backGrounGradient.frame = self.view.bounds
+//        backGrounGradient.colors = [
+//            UIColor.systemCyan.cgColor,
+//            UIColor.systemYellow.cgColor
+//        ]
+//        backGrounGradient.startPoint = CGPoint(x:0,y:0)
+//        backGrounGradient.endPoint = CGPoint(x:1,y:1)
+//        self.view.layer.addSublayer(backGrounGradient)
+//
+//      (topColor: firstColor, bottomColor: secondColor)
         
-//        (topColor: firstColor, bottomColor: secondColor)
-        
-        helloWordLabel.text = "Hello, \(user.person)"
+        helloWordLabel.text = "Hello, \(user.person.name)"
        
     
     }

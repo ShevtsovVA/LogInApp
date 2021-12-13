@@ -46,13 +46,20 @@ class ViewController: UIViewController {
             if let helloVC = $0 as? HelloScreenViewController {
                 helloVC.user = user
             } else if let navigationVC = $0 as? UINavigationController{
-                let userVC = navigationVC.topViewController as! UserInfoViewController
+                guard let userVC = navigationVC.topViewController as? UserInfoViewController else {return}
                 userVC.user = user
             }
         }
-     
     }
     
+    @IBAction func unwindSegueToMainVC (segue: UIStoryboardSegue) {
+        guard let sourceVC = segue.source as? ViewController else {return}
+        sourceVC.passwordTF.text = ""
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
 
