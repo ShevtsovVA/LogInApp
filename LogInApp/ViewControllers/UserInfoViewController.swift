@@ -9,19 +9,21 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-    @IBOutlet weak var nameSurname: UINavigationItem!
+
+    @IBOutlet weak var fullName: UINavigationItem!
     
+   
     var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameSurname.title = user.person.fullName
-
-
+        fullName.title = user.person.fullName
+    
     }
     
-
- 
+    @IBAction func goToImage(_ sender: UIButton) {
+        performSegue(withIdentifier: "imageSegue", sender: nil)
+    }
 
 }

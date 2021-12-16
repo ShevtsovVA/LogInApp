@@ -19,24 +19,25 @@ class HelloScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let backGrounGradient = CAGradientLayer ()
-//        backGrounGradient.frame = self.view.bounds
-//        backGrounGradient.colors = [
-//            UIColor.systemCyan.cgColor,
-//            UIColor.systemYellow.cgColor
-//        ]
-//        backGrounGradient.startPoint = CGPoint(x:0,y:0)
-//        backGrounGradient.endPoint = CGPoint(x:1,y:1)
-//        self.view.layer.addSublayer(backGrounGradient)
-//
-//      (topColor: firstColor, bottomColor: secondColor)
-        
+        view.addVerticalGradient(topColor: firstColor, bottomColor: secondColor)
         helloWordLabel.text = "Hello, \(user.person.name)"
        
     
     }
-    
+}
+// MARK: - Set background color
+extension UIView {
+    func addVerticalGradient (topColor: UIColor, bottomColor: UIColor) {
+            let backGrounGradient = CAGradientLayer ()
+            backGrounGradient.frame = bounds
+            backGrounGradient.colors = [
+                topColor.cgColor,
+                bottomColor.cgColor
+            ]
+            backGrounGradient.startPoint = CGPoint(x:0,y:0)
+            backGrounGradient.endPoint = CGPoint(x:1,y:1)
+        layer.insertSublayer(backGrounGradient, at: 0)
+    }
 
 
 }
